@@ -111,7 +111,9 @@ li span {
 }
 
 .complete-title {
-    animation: complete 5s infinite;
+    animation: complete 3s infinite;
+    
+ 
 }
 
 @keyframes complete {
@@ -159,7 +161,7 @@ li span {
         width: unset;
     }
     input{
-        width: 93%;
+        width: 95%;
     }
     h1{
         font-size: 20px;
