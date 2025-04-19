@@ -14,12 +14,55 @@ body{
 
 img{
     position: fixed;
-    top: 1;
+    top: 0;
     right: 0;
-    bottom: 1;
+    bottom: 0;
     width: 100vw;
     height: auto;
 }
+.navbar{
+padding: 10px 0px;
+background-color: #006959;
+display: flex;
+justify-content: space-around;
+color: white;
+font-size: 30px;
+box-shadow: 0 10px 10px 10px rgba(0, 0, 0, 0.25);
+
+}
+
+   .navbar-item {
+text-align: center;
+  }
+   .fixed-top{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+   }
+
+    a{
+        color: white;
+        text-decoration: none;
+    }
+
+    a:hover{
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+        transition: ease-in 0.3s;
+        transform: scale(1.05);
+        
+}
+
+
+
+
+
+
+
+
 
 .container {
     min-width: 580px;
@@ -46,8 +89,7 @@ h1{
 
 /* form */
 .form{
-    width: 370px;
-    justify-content: center;
+    width: 480px;
 }
 
 label {
@@ -56,14 +98,16 @@ label {
 }
 
 input {
-    width: 100%;
+    width: 95%;
     margin-bottom: 10px;
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 20px;
+    border-radius: 7px;
     background-color: #fff;
     outline: none;
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    letter-spacing: 1px;
 }
 
 /* button */
@@ -84,6 +128,73 @@ button {
 button:hover {
     filter: brightness(70%);
 
+}
+.modal-container{
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    position: fixed;
+    top: 0;
+    left:0;
+    right: 0;
+    bottom: 0;
+}
+.show-modal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+    .modal{
+        background: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+        max-width: 95%;
+        width: 500px;
+        animation: modalopen 1s; 
+}
+
+    @keyframes modalopen {
+        form{
+            opacity: 0;
+        }
+
+        to{
+            opacity: 1;
+        }
+    }
+
+    .close-icon {
+        float: right;
+        color: white;
+        font-size: 24px;
+        position: relative;
+        top: 13px;
+        right: 13px;
+        cursor: pointer;
+    }
+
+    .modal-header{
+        background-color: rgb(82, 115, 167);
+        color: white;
+        padding: 5px;
+    }
+    h3{
+        margin: 5px;
+        text-align: center;
+        font-size: 25px;
+    }
+
+.modal-content {
+    padding: 20px;
+    background: whitesmoke;
+}
+
+.suggeted-list-li{
+    font-size: 20px;
+}
+.suggeted-list-li:hover{
+    color: #006959;
+    cursor: pointer;
 }
 
 /* countdown */
@@ -135,7 +246,7 @@ li span {
 
 /* media query: large smartphone */
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:750px) {
     .img{
         height: 100vh;
         width: 100vw;
@@ -148,6 +259,11 @@ li span {
         padding: 20px;
         margin: 10px;
     }
+    .navbar {
+        padding: 10px 20px;
+        font-size: 21px;
+        align-items: center;
+      }
 
     .input-container{
         top: unset;
