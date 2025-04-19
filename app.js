@@ -25,3 +25,26 @@ const second = 1000;
 const minute = second * 60;
 const hour = munite * 60;
 const day = hour * 24;
+
+
+//set dat input mimimum with todays date
+const today = new Date().toISOString().split('T')[0];
+dateElement.setAttribute('min',today);
+
+//populate countdown / complete UI
+
+function updateDOM(){
+    countdownActive = setInterval(()=>{
+        //get the time between jan 1,1970 to the entered date ,returned in millisecond
+        const now = new Date().getTime();
+        const distance = countdownValue - now;
+
+        //split up the time held in distance into days,hours , minutes and seconds;
+        const days = Math.floor(distance / day);
+        const hours = Math.floor((distance%day)/hour);
+        const minutes = Math.floor((distance%hour)/munite);
+        const seconds = Math.floor((distance%munite)/second);
+
+        //hide input
+    })
+}
